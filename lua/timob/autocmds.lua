@@ -15,7 +15,7 @@ local format_group = vim.api.nvim_create_augroup('FormatOptions', {})
 vim.api.nvim_create_autocmd('BufEnter', {
   group = format_group,
   callback = function()
-    vim.opt.formatoptions = vim.opt.formatoptions - { 'o' }
+    vim.opt.formatoptions:remove { 'o' }
   end,
 })
 
