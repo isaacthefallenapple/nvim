@@ -13,6 +13,7 @@ return {
         },
         ['swift-format'] = {
           command = '/home/timob/.swift/swift-format/.build/release/swift-format',
+          args = { '$FILENAME' },
         },
       },
       formatters_by_ft = {
