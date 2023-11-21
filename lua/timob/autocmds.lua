@@ -65,3 +65,11 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.keymap.set('n', 'q', '<cmd>close<cr>', { buffer = event.buf, silent = true })
   end,
 })
+
+-- [[ Format on save ]]
+local formatting_group = vim.api.nvim_create_augroup('Formatting', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePre', {
+  group = formatting_group,
+  pattern = '*',
+  command = 'Format',
+})
