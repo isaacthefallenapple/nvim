@@ -103,6 +103,12 @@ return {
           }
         end,
       }
+
+      -- Mason doesn't know about sourcekit for some reason
+      require('lspconfig').sourcekit.setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      }
     end,
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
