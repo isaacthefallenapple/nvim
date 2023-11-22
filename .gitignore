@@ -4,5 +4,4 @@ test.sh
 nvim
 lazy-lock.json
 doc/
-README.md
 lua/kickstart/
