@@ -1,9 +1,10 @@
 return {
   {
-    'nyoom-engineering/oxocarbon.nvim',
-    priority = 1000,
+    'isaacthefallenapple/oxocarbon.nvim',
+    branch = 'lualine',
     config = function()
-      vim.cmd.colorscheme 'oxocarbon'
+      vim.opt.background = 'dark'
+      vim.cmd.colorscheme = 'oxocarbon'
     end,
   },
   {

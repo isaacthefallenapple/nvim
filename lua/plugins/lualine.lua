@@ -6,10 +6,11 @@ return {
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'oxocarbon',
         component_separators = '|',
         section_separators = '',
       },
     },
+    dependencies = { 'isaacthefallenapple/oxocarbon.nvim' },
   },
 }
