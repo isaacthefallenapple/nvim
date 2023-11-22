@@ -26,8 +26,22 @@ vim.keymap.set('n', 'N', 'Nzzzv', {})
 vim.keymap.set({ 'n', 'v', 'o' }, 'Q', 'gq')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+local function goto_next_diagnostic(severity)
+  return function()
+    vim.diagnostic.goto_next { severity = severity }
+  end
+end
+
+local function goto_prev_diagnostic(severity)
+  return function()
+    vim.diagnostic.goto_prev { severity = severity }
+  end
+end
+
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', ']e', goto_next_diagnostic { min = vim.diagnostic.severity.WARN }, { desc = 'Go to next error message' })
+vim.keymap.set('n', '[e', goto_prev_diagnostic { min = vim.diagnostic.severity.WARN }, { desc = 'Go to previous error message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
