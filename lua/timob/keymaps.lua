@@ -10,7 +10,7 @@ vim.g.maplocalleader = ' '
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Open Netrw
-vim.keymap.set('n', '<leader>pv', '<Cmd>Ex<CR>', { desc = '[P]roject [V]iew' })
+vim.keymap.set('n', '<leader>pv', ':Ex<CR>', { desc = '[P]roject [V]iew' })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -45,8 +45,8 @@ vim.keymap.set('n', '[e', goto_prev_diagnostic { min = vim.diagnostic.severity.W
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
-vim.keymap.set('n', '<leader><tab>', '<cmd>tabn<cr>', { desc = 'Go to next tab' })
-vim.keymap.set('n', '<leader><S-tab>', '<cmd>tabp<cr>', { desc = 'Go to previous tab' })
+vim.keymap.set('n', '<leader><tab>', ':tabn<CR>', { desc = 'Go to next tab' })
+vim.keymap.set('n', '<leader><S-tab>', ':tabp<CR>', { desc = 'Go to previous tab' })
 
 -- Fugitive keymaps
 vim.keymap.set('n', '<leader>gl', ':Git log --oneline<CR>', { desc = '[G]it [L]og' })
