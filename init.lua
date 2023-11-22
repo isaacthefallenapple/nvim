@@ -1,8 +1,8 @@
-require 'timob.keymaps'
-require 'timob.options'
-require 'timob.autocmds'
-require 'timob.usercmds'
-require 'timob.lazy'
+require 'core.keymaps'
+require 'core.options'
+require 'core.autocmds'
+require 'core.usercmds'
+require 'core.lazy'
 
 -- See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
