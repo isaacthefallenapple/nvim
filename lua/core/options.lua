@@ -61,4 +61,4 @@ vim.opt.virtualedit = 'block'
 
 vim.opt.wildmode = 'longest:full,full'
 
-vim.o.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
+-- vim.o.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"

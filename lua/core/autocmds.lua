@@ -80,5 +80,10 @@ local formatting_group = vim.api.nvim_create_augroup('Formatting', { clear = tru
 vim.api.nvim_create_autocmd('BufWritePre', {
   group = formatting_group,
   pattern = '*',
-  command = 'Format',
+  callback = function(args)
+    if vim.g.disable_autoformat or vim.b[args.buf].disable_autoformat then
+      return
+    end
+    vim.cmd 'Format'
+  end,
 })
