@@ -44,7 +44,15 @@ local startup_group = vim.api.nvim_create_augroup('Startup', { clear = true })
 vim.api.nvim_create_autocmd('VimEnter', {
   group = startup_group,
   callback = function(_)
-    vim.cmd { cmd = 'cd', args = { '%:p:h' } }
+    local path = vim.fn.expand '%:p:h'
+    if type(path) == 'table' then
+      path = path[0]
+    end
+    local m = path:match '^oil://(.*)$'
+    if m then
+      path = m
+    end
+    vim.cmd { cmd = 'cd', args = { path } }
   end,
 })
 

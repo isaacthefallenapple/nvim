@@ -9,8 +9,11 @@ vim.g.maplocalleader = ' '
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- Open Netrw
-vim.keymap.set('n', '<leader>pv', ':Ex<CR>', { desc = '[P]roject [V]iew' })
+-- Open file explorer
+vim.keymap.set('n', '<leader>pv', ':Pv<CR>', { desc = '[P]roject [V]iew' })
+vim.keymap.set('n', '<leader>spv', ':Spv<CR>', { desc = '[S]plit [P]roject [V]iew' })
+vim.keymap.set('n', '<leader>vpv', ':Vpv<CR>', { desc = '[V]split [P]roject [V]iew' })
+vim.keymap.set('n', '<leader>tpv', ':Tpv<CR>', { desc = '[T]ab [P]roject [V]iew' })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })

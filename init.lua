@@ -1,3 +1,7 @@
+_G.fileexplorer = function(path)
+  vim.cmd { cmd = 'Oil', args = { path } }
+end
+
 require 'core.keymaps'
 require 'core.options'
 require 'core.autocmds'
