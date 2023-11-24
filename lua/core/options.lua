@@ -36,12 +36,6 @@ vim.opt.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.opt.completeopt = 'menuone,noselect'
 
--- Native indent-blankline
-vim.opt.list = true
-vim.opt.listchars = {
-  leadmultispace = '│ ',
-}
-
 -- NOTE: You should make sure your terminal supports this
 vim.opt.termguicolors = true
 
@@ -60,5 +54,43 @@ vim.opt.splitright = true
 vim.opt.virtualedit = 'block'
 
 vim.opt.wildmode = 'longest:full,full'
+
+-- [[ Native indent-blankline ]]
+vim.opt.list = true
+
+---@param tabstop number
+---@return string
+local function get_leadmultispace(tabstop)
+  local lead = vim.fn.str2list '│'
+  for i = 2, tabstop do
+    lead[i] = 0x20
+  end
+  return vim.fn.list2str(lead)
+end
+
+vim.opt.listchars = {
+  nbsp = '␣',
+  trail = '␣',
+  extends = '>',
+  leadmultispace = get_leadmultispace(vim.opt.tabstop:get()),
+}
+
+local function update_lead()
+  local tabstop = vim.opt_local.tabstop:get()
+  vim.opt_local.listchars:append { leadmultispace = get_leadmultispace(tabstop) }
+end
+
+vim.api.nvim_create_autocmd('OptionSet', {
+  pattern = { 'listchars', 'tabstop', 'filetype' },
+  callback = function()
+    local opt_local = vim.opt_local
+    -- this doesn't strike me as particularly reliable, but it appears to work
+    vim.schedule(function()
+      opt_local.eventignore:append 'OptionSet'
+      update_lead()
+      opt_local.eventignore:remove 'OptionSet'
+    end)
+  end,
+})
 
 -- vim.o.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
