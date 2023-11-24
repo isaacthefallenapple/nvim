@@ -1,7 +1,7 @@
 vim.api.nvim_create_user_command('Config', function()
   local path = vim.fn.stdpath 'config'
   vim.cmd.cd(path)
-  _G.fileexplorer(path)
+  vim.cmd { cmd = 'Oil', args = { path } }
 end, {})
 
 vim.api.nvim_create_user_command('Format', function()
@@ -23,7 +23,7 @@ end
 -- :Pv[!] Open [P]roject [V]iew
 vim.api.nvim_create_user_command('Pv', function(args)
   local path = args.bang and vim.fn.getcwd() or vim.fn.expand '%:p:h'
-  _G.fileexplorer(path)
+  vim.cmd { cmd = 'Oil', args = { path } }
 end, { bang = true })
 -- :Spv[!] Open [S]plit [P]roject [V]iew
 vim.api.nvim_create_user_command('Spv', function(args)
