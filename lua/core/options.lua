@@ -16,6 +16,9 @@ vim.opt.mouse = 'a'
 --  See `:help 'clipboard'`
 vim.opt.clipboard = 'unnamedplus'
 
+-- Use rg as grep provider
+vim.opt.grepprg = 'rg --vimgrep --no-heading --smart-case'
+
 -- Enable break indent
 vim.opt.breakindent = true
 
