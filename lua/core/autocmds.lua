@@ -69,6 +69,7 @@ vim.api.nvim_create_autocmd('FileType', {
     'checkhealth',
     'fugitive',
     'git',
+    'qf',
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
