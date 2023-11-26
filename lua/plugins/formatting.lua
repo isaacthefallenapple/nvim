@@ -15,6 +15,10 @@ return {
           command = '/home/timob/.swift/swift-format/.build/release/swift-format',
           args = { '$FILENAME' },
         },
+        fnlfmt = {
+          command = '/home/timob/.fnlfmt/bin/fnlfmt',
+          args = { '$FILENAME' },
+        },
       },
       formatters_by_ft = {
         html = { 'prettierd' },
@@ -22,6 +26,7 @@ return {
         purescript = { 'purescript-tidy' },
         swift = { 'swift-format' },
         lua = { 'stylua' },
+        fennel = { 'fnlfmt' },
       },
     },
   },

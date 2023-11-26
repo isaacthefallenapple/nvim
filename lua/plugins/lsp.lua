@@ -60,6 +60,7 @@ return {
       --  define the property 'filetypes' to the map in question.
       local servers = {
         clangd = {},
+        fennel_language_server = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
