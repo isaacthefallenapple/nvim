@@ -1,7 +1,6 @@
 return {
   {
     'isaacthefallenapple/oxocarbon.nvim',
-    branch = 'lualine',
     build = 'make',
     config = function()
       vim.opt.background = 'dark'
