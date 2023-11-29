@@ -13,7 +13,8 @@ return {
         },
         ['swift-format'] = {
           command = '/home/timob/.swift/swift-format/.build/release/swift-format',
-          args = { '$FILENAME' },
+          args = { 'format', '$FILENAME', '--in-place' },
+          stdin = false,
         },
         fnlfmt = {
           command = '/home/timob/.fnlfmt/bin/fnlfmt',
