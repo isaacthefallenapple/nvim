@@ -59,8 +59,10 @@ return {
 
       local function withIvyTheme(fun)
         local ivy = require('telescope.themes').get_ivy()
-        return function()
-          fun(ivy)
+
+        return function(opts)
+          opts = opts or {}
+          fun(vim.tbl_extend('keep', opts, ivy))
         end
       end
 
@@ -77,6 +79,9 @@ return {
 
       vim.keymap.set('n', '<leader>gf', withIvyTheme(require('telescope.builtin').git_files), { desc = 'Search [G]it [F]iles' })
       vim.keymap.set('n', '<leader>sf', withIvyTheme(require('telescope.builtin').find_files), { desc = '[S]earch [F]iles' })
+      vim.keymap.set('n', '<leader>sD', function()
+        withIvyTheme(require('telescope.builtin').find_files) { find_command = { 'fd', '-td', '-a' } }
+      end, { desc = '[S]earch [D]irectories' })
       vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
