@@ -37,3 +37,15 @@ end, { bang = true })
 vim.api.nvim_create_user_command('Tpv', function(args)
   vim.cmd('tab split | ' .. withBang('Pv', args.bang))
 end, { bang = true })
+
+vim.api.nvim_create_user_command('ToggleAutoFormat', function()
+  local disable = not vim.g.disable_autoformat
+  vim.g.disable_autoformat = disable
+  local message
+  if disable then
+    message = 'disabled'
+  else
+    message = 'enabled'
+  end
+  vim.notify(string.format('auto format %s', message), vim.log.levels.INFO)
+end, {})
