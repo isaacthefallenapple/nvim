@@ -18,7 +18,8 @@ return {
         },
         fnlfmt = {
           command = '/home/timob/.fnlfmt/bin/fnlfmt',
-          args = { '$FILENAME' },
+          args = { '-' },
+          stdin = true,
         },
       },
       formatters_by_ft = {
