@@ -7,6 +7,7 @@ vim.opt.inccommand = 'nosplit'
 
 -- Make line numbers default
 vim.wo.relativenumber = true
+vim.wo.number = true
 
 -- Enable mouse mode
 vim.opt.mouse = 'a'
