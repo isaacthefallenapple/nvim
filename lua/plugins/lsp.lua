@@ -61,9 +61,9 @@ return {
       local servers = {
         clangd = {},
         fennel_language_server = {},
+        rust_analyzer = {},
         -- gopls = {},
         -- pyright = {},
-        -- rust_analyzer = {},
         -- tsserver = {},
         -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
