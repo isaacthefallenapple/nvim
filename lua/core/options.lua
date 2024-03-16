@@ -98,3 +98,8 @@ vim.api.nvim_create_autocmd('OptionSet', {
 })
 
 -- vim.o.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
+
+-- use treesitter folding
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.wo.foldenable = false
