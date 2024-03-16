@@ -24,7 +24,9 @@ return {
       },
       formatters_by_ft = {
         html = { 'prettierd' },
+        css = { 'prettierd' },
         json = { 'prettierd' },
+        javascript = { 'prettierd' },
         purescript = { 'purescript-tidy' },
         swift = { 'swift-format' },
         lua = { 'stylua' },

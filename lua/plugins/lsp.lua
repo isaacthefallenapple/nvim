@@ -62,10 +62,10 @@ return {
         clangd = {},
         fennel_language_server = {},
         rust_analyzer = {},
+        html = { filetypes = { 'html' } },
         -- gopls = {},
         -- pyright = {},
-        -- tsserver = {},
-        -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+        tsserver = {},
 
         lua_ls = {
           Lua = {
