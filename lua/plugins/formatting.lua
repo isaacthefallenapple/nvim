@@ -4,6 +4,7 @@ return {
     dependencies = { 'mason.nvim' },
     event = 'BufEnter',
     opts = {
+      notify_on_error = false,
       formatters = {
         injected = { options = { ignore_errors = true } },
         ['purescript-tidy'] = {
