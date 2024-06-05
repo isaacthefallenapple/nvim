@@ -64,8 +64,9 @@ return {
         fennel_language_server = {},
         rust_analyzer = {},
         html = { filetypes = { 'html' } },
+        htmx = { filetypes = { 'html', 'templ' } },
         -- gopls = {},
-        -- pyright = {},
+        pyright = { filetypes = { 'python' } },
         tsserver = {},
 
         lua_ls = {
@@ -74,6 +75,9 @@ return {
             telemetry = { enable = false },
           },
         },
+        gopls = {},
+        templ = {},
+        elmls = {},
       }
 
       -- Setup neovim lua configuration
