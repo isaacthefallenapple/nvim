@@ -103,3 +103,7 @@ vim.opt.wildmode = 'longest:full,full'
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.wo.foldenable = false
+
+vim.filetype.add { extension = {
+  templ = 'templ',
+} }
