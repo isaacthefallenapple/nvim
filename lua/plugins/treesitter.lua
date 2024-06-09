@@ -2,6 +2,7 @@ return {
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+    version = '0.9.2',
     config = function(_, opts)
       -- [[ Configure Treesitter ]]
       -- See `:help nvim-treesitter`
@@ -10,7 +11,24 @@ return {
         ---@diagnostic disable-next-line: missing-fields
         require('nvim-treesitter.configs').setup {
           -- Add languages to be installed here that you want installed for treesitter
-          ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'swift' },
+          ensure_installed = {
+            'c',
+            'cpp',
+            'go',
+            'lua',
+            'python',
+            'rust',
+            'tsx',
+            'javascript',
+            'typescript',
+            'vimdoc',
+            'vim',
+            'bash',
+            'swift',
+            'templ',
+            'html',
+            'elm',
+          },
 
           -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
           auto_install = false,
