@@ -78,6 +78,8 @@ return {
         gopls = {},
         templ = {},
         elmls = {},
+        taplo = {},
+        cssls = {},
       }
 
       -- Setup neovim lua configuration
@@ -105,8 +107,13 @@ return {
         end,
       }
 
+      local lspconfig = require 'lspconfig'
       -- Mason doesn't know about sourcekit for some reason
-      require('lspconfig').sourcekit.setup {
+      lspconfig.sourcekit.setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      }
+      lspconfig.gleam.setup {
         capabilities = capabilities,
         on_attach = on_attach,
       }
