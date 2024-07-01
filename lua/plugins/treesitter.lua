@@ -28,6 +28,7 @@ return {
             'templ',
             'html',
             'elm',
+            'toml',
           },
 
           -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
