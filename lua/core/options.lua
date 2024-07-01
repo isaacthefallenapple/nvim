@@ -106,4 +106,5 @@ vim.wo.foldenable = false
 
 vim.filetype.add { extension = {
   templ = 'templ',
+  flix = 'flix',
 } }
