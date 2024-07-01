@@ -11,6 +11,6 @@ return {
         section_separators = '',
       },
     },
-    dependencies = { 'isaacthefallenapple/oxocarbon.nvim' },
+    dependencies = { 'nyoom-engineering/oxocarbon.nvim' },
   },
 }
