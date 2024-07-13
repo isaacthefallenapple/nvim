@@ -2,7 +2,6 @@ return {
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
-    version = '0.9.2',
     config = function(_, opts)
       -- [[ Configure Treesitter ]]
       -- See `:help nvim-treesitter`
