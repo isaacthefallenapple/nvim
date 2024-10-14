@@ -34,7 +34,7 @@ return {
           auto_install = false,
 
           highlight = { enable = true },
-          indent = { enable = true },
+          indent = { enable = true, disable = { 'c' } },
           incremental_selection = {
             enable = true,
             keymaps = {
