@@ -82,6 +82,7 @@ return {
         elmls = {},
         taplo = {},
         cssls = {},
+        emmet_language_server = {},
       }
 
       -- Setup neovim lua configuration
