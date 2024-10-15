@@ -53,6 +53,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('n', '<leader><tab>', '<Cmd>tabn<CR>', { desc = 'Go to next tab' })
 vim.keymap.set('n', '<leader><S-tab>', '<Cmd>tabp<CR>', { desc = 'Go to previous tab' })
 
+-- All-cap word
+vim.keymap.set('n', '<leader>u', 'gUiw', { desc = 'Make word all-caps' })
+vim.keymap.set('n', '<leader>U', 'gUiW', { desc = 'Make WORD all-caps' })
+
 -- Fugitive keymaps
 vim.keymap.set('n', '<leader>gl', ':Git log --oneline<CR>', { desc = '[G]it [L]og' })
 vim.keymap.set('n', '<leader>gs', '<Cmd>Git<CR>', { desc = '[G]it [S]tatus' })
