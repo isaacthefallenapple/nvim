@@ -22,6 +22,11 @@ return {
           args = { '-' },
           stdin = true,
         },
+        buf = {
+          command = '/home/timob/.local/share/nvim/mason/bin/buf',
+          args = { 'format', '-w', '$FILENAME' },
+          stdin = false,
+        },
       },
       formatters_by_ft = {
         html = { 'prettierd' },
@@ -36,6 +41,7 @@ return {
         templ = { 'templ' },
         python = { 'black', 'isort' },
         elm = { 'elm-format' },
+        proto = { 'buf' },
       },
     },
   },
