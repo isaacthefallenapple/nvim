@@ -43,14 +43,10 @@ end
 
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '[w', goto_prev_diagnostic(vim.diagnostic.severity.WARN),
-  { desc = 'Go to previous warning' })
-vim.keymap.set('n', ']w', goto_next_diagnostic(vim.diagnostic.severity.WARN),
-  { desc = 'Go to next warning' })
-vim.keymap.set('n', '[e', goto_prev_diagnostic(vim.diagnostic.severity.ERROR),
-  { desc = 'Go to previous error' })
-vim.keymap.set('n', ']e', goto_next_diagnostic(vim.diagnostic.severity.ERROR),
-  { desc = 'Go to next error' })
+vim.keymap.set('n', '[w', goto_prev_diagnostic(vim.diagnostic.severity.WARN), { desc = 'Go to previous warning' })
+vim.keymap.set('n', ']w', goto_next_diagnostic(vim.diagnostic.severity.WARN), { desc = 'Go to next warning' })
+vim.keymap.set('n', '[e', goto_prev_diagnostic(vim.diagnostic.severity.ERROR), { desc = 'Go to previous error' })
+vim.keymap.set('n', ']e', goto_next_diagnostic(vim.diagnostic.severity.ERROR), { desc = 'Go to next error' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
