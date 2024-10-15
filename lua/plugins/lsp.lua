@@ -62,6 +62,7 @@ return {
         clangd = {
           filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
         },
+        bufls = {},
         fennel_language_server = {},
         rust_analyzer = {},
         html = { filetypes = { 'html' } },
