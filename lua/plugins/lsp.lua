@@ -115,6 +115,7 @@ return {
       lspconfig.sourcekit.setup {
         capabilities = capabilities,
         on_attach = on_attach,
+        filetypes = { 'swift' },
       }
       lspconfig.gleam.setup {
         capabilities = capabilities,
