@@ -68,7 +68,6 @@ return {
         html = { filetypes = { 'html' } },
         htmx = { filetypes = { 'html', 'templ' } },
         -- gopls = {},
-        pyright = { filetypes = { 'python' } },
         -- tsserver = {},
 
         lua_ls = {
@@ -111,6 +110,21 @@ return {
       }
 
       local lspconfig = require 'lspconfig'
+
+      -- For some reason, these settings don't take if I put them in `servers` with the others.
+      -- I think I oughta get rid of mason-lspconfig, it's starting to annoy me.
+      require('lspconfig').pylsp.setup {
+        on_attach = on_attach,
+        settings = {
+          pylsp = {
+            plugins = {
+              pyflakes = { enabled = false },
+              pylint = { enabled = false },
+            },
+          },
+        },
+      }
+
       -- Mason doesn't know about sourcekit for some reason
       lspconfig.sourcekit.setup {
         capabilities = capabilities,

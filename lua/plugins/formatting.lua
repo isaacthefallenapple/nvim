@@ -39,7 +39,6 @@ return {
         fennel = { 'fnlfmt' },
         go = { 'gofumpt', 'goimports' },
         templ = { 'templ' },
-        python = { 'black', 'isort' },
         elm = { 'elm-format' },
         proto = { 'buf' },
       },
