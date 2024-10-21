@@ -41,6 +41,7 @@ return {
         templ = { 'templ' },
         elm = { 'elm-format' },
         proto = { 'buf' },
+        svg = { 'prettierd' },
       },
     },
   },
