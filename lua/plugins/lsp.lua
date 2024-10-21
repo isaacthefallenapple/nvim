@@ -69,7 +69,7 @@ return {
         htmx = { filetypes = { 'html', 'templ' } },
         -- gopls = {},
         pyright = { filetypes = { 'python' } },
-        tsserver = {},
+        -- tsserver = {},
 
         lua_ls = {
           Lua = {
