@@ -27,6 +27,11 @@ return {
           args = { 'format', '-w', '$FILENAME' },
           stdin = false,
         },
+        ruff = {
+          command = 'ruff',
+          args = { 'format', '$FILENAME' },
+          stdin = false,
+        },
       },
       formatters_by_ft = {
         html = { 'prettierd' },
@@ -42,6 +47,7 @@ return {
         elm = { 'elm-format' },
         proto = { 'buf' },
         svg = { 'prettierd' },
+        python = { 'ruff' },
       },
     },
   },
