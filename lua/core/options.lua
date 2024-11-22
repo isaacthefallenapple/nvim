@@ -112,6 +112,6 @@ vim.filetype.add { extension = {
 -- Display the source of diagnostics if there are multiple possible sources
 vim.diagnostic.config {
   float = {
-    source = 'if_many',
+    source = true,
   },
 }
