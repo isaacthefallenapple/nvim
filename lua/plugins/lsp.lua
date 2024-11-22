@@ -111,20 +111,10 @@ return {
 
       local lspconfig = require 'lspconfig'
 
-      -- For some reason, these settings don't take if I put them in `servers` with the others.
-      -- I think I oughta get rid of mason-lspconfig, it's starting to annoy me.
-      require('lspconfig').pylsp.setup {
+      lspconfig.basedpyright.setup {
+        capabilities = capabilities,
         on_attach = on_attach,
-        settings = {
-          pylsp = {
-            plugins = {
-              pyflakes = { enabled = false },
-              pylint = { enabled = false },
-            },
-          },
-        },
       }
-
       -- Mason doesn't know about sourcekit for some reason
       lspconfig.sourcekit.setup {
         capabilities = capabilities,
