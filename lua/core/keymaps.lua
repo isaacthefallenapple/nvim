@@ -25,6 +25,9 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', {})
 vim.keymap.set('n', 'n', 'nzzzv', {})
 vim.keymap.set('n', 'N', 'Nzzzv', {})
 
+-- Uppercase word in insert mode
+vim.keymap.set('i', '<M-u>', '<Esc>gUiw`]a')
+
 -- Replace ex mode with gq
 vim.keymap.set({ 'n', 'v', 'o' }, 'Q', 'gq')
 
